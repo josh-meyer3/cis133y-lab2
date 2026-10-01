@@ -31,25 +31,38 @@ def collectData():
 def main():
     selected=""
     while selected.lower() != "q":
-        current_time = datetime.now()
-        current_time_string = str(current_time.date()) + \
-            " " + str(current_time.strftime("%H:%M:%S %P"))
+        # The name of the Application to display
         app_name = "Application Name"
+        # Get the current date and time
+        current_time = datetime.now()
+        # Format current_time to this style: 2026-10-01 12:10:05 PM
+        current_time_string = str(current_time.date()) + \
+            " " + str(current_time.strftime("%H:%M:%S %p"))
+        # Determine which is longer, datetime stamp or the application name
+        #  and add some padding
         border_length = len(current_time_string)
         if len(app_name) > border_length:
             border_length = len(app_name)
         border_length+=2
+        # Print top border
         print("*"*(border_length +2))
+        # Print "*" on either side of the Application Name while centering it
+        #  with whitespace.
         print("*" + (" "*int((border_length - len(app_name))/2)) +
             app_name + (" "*int((border_length - 
             len(app_name))/2)) + "*")
+        # Print "*" on either side of the datetime stamp while centering it
+        #  with whitespace.
         print("*" + (" "*int((border_length - len(current_time_string))/2)) +
             current_time_string + (" "*int((border_length - 
             len(current_time_string))/2)) + "*")
+        # Print bottom border
         print("*"*(border_length +2))
+        # Print menu options and receive input
         print("1) Enter Info")
         print("q) Quit Application")
         selected=input("> ")
+        # If tree for parsing the user input
         if selected == "1":
             collectData()
         print("")
