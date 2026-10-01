@@ -45,19 +45,19 @@ def main():
             border_length = len(app_name)
         border_length+=2
         # Print top border
-        print("*"*(border_length +2))
+        print("*" * (border_length +2))
         # Print "*" on either side of the Application Name while centering it
         #  with whitespace.
-        print("*" + (" "*int((border_length - len(app_name))/2)) +
-            app_name + (" "*int((border_length - 
-            len(app_name))/2)) + "*")
+        whitespace = int((border_length - len(app_name))/2)
+        print("*" + (" " * whitespace) +
+            app_name + (" " * whitespace) + "*")
         # Print "*" on either side of the datetime stamp while centering it
         #  with whitespace.
-        print("*" + (" "*int((border_length - len(current_time_string))/2)) +
-            current_time_string + (" "*int((border_length - 
-            len(current_time_string))/2)) + "*")
+        whitespace = int((border_length - len(current_time_string))/2)
+        print("*" + (" " * whitespace) +
+            current_time_string + (" " * whitespace) + "*")
         # Print bottom border
-        print("*"*(border_length +2))
+        print("*" * (border_length +2))
         # Print menu options and receive input
         print("1) Enter Info")
         print("q) Quit Application")
