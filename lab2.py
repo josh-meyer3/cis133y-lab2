@@ -10,12 +10,12 @@
 #
 #
 # Lab Requirements:
-# \ Accept at least a numeric and a string value
-# - Perform at least one calculation with arithmetic operators and at least
+# X Accept at least a numeric and a string value
+# X Perform at least one calculation with arithmetic operators and at least
 #   one compound operator
 # X Use at least one date-time function
 # X Use round()
-# - Use format()
+# X Use format()
 # X Include at least one chaining function
 # X At least one output that has concatenated string ("..." + "...")
 from datetime import date,datetime,time
@@ -49,13 +49,13 @@ def main():
         # Print "*" on either side of the Application Name while centering it
         #  with whitespace.
         whitespace = int((border_length - len(app_name))/2)
-        print("*" + (" " * whitespace) +
-            app_name + (" " * whitespace) + "*")
+        print("*{spacing}{naming}{spacing}*".format(spacing = (" " * whitespace),
+            naming = app_name))
         # Print "*" on either side of the datetime stamp while centering it
         #  with whitespace.
         whitespace = int((border_length - len(current_time_string))/2)
-        print("*" + (" " * whitespace) +
-            current_time_string + (" " * whitespace) + "*")
+        print("*{spacing}{naming}{spacing}*".format(spacing = (" " * whitespace),
+            naming = current_time_string))
         # Print bottom border
         print("*" * (border_length +2))
         # Print menu options and receive input
@@ -63,8 +63,9 @@ def main():
         print("q) Quit Application")
         selected=input("> ")
         # If tree for parsing the user input
-        if selected == "1":
-            collectData()
+        if str.isdigit(selected):
+            if int(selected) == 1:
+                collectData()
         print("")
 
 main()
