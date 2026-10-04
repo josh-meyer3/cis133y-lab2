@@ -30,7 +30,7 @@ def collectData():
             try:
                 float(price)
             except:
-                price == 0.0
+                price = 0.0
                 print("Invalid input")
         count = 0
         while count == 0:
@@ -38,10 +38,9 @@ def collectData():
             if not str.isdigit(count):
                 count = 0
                 print("Invalid input")
-        total = float(price) * int(count)
-        print("*  {product} - ${price} x{count}: ${total}".format(product = 
-            product_name, price = price, count = count, total = total))
-        user_input = input("Add a new purchase? (y/N): ")
+        total = round(float(price) * int(count), 2)
+        print("*  {product} - ${price:.2f} x{count}: ${total:.2f}".format(product = 
+            product_name, price = float(price), count = int(count), total = float(total)))
 
 
 # The main program loop presents the name of the application and the current
