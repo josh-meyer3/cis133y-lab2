@@ -21,7 +21,27 @@
 from datetime import date,datetime,time
 
 def collectData():
-    pass
+    user_input = input("Add a new purchase? (y/N): ")
+    if user_input.lower() == "y":
+        product_name = input("Product Name: ")
+        price = 0.0
+        while price == 0.0:
+            price = input("Price: $")
+            try:
+                float(price)
+            except:
+                price == 0.0
+                print("Invalid input")
+        count = 0
+        while count == 0:
+            count = input("Number Sold: ")
+            if not str.isdigit(count):
+                count = 0
+                print("Invalid input")
+        total = float(price) * int(count)
+        print("*  {product} - ${price} x{count}: ${total}".format(product = 
+            product_name, price = price, count = count, total = total))
+        user_input = input("Add a new purchase? (y/N): ")
 
 
 # The main program loop presents the name of the application and the current
