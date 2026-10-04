@@ -1,49 +1,56 @@
 #*****************************************************************************
 # Author:       Grayson Hanna and Josh Meyer
 # Assignment:   CIS-133Y Lab2
-# Date:         10/1/2026
-# Description:  
-# Input:        
-# Output:       
+# Date:         10/3/2026
+# Description:  Collect product information to determine total purchase prices
+# Input:        str product_name, float price, int count, str/int selected
+# Output:       str product_name, float price, int count, float total
 # Sources:      
 #*****************************************************************************
 #
 #
-# Lab Requirements:
-# X Accept at least a numeric and a string value
-# X Perform at least one calculation with arithmetic operators and at least
-#   one compound operator
-# X Use at least one date-time function
-# X Use round()
-# X Use format()
-# X Include at least one chaining function
-# X At least one output that has concatenated string ("..." + "...")
-from datetime import date,datetime,time
+from datetime import datetime
 
-#Program polish and testing Grayson Hanna
+# Program polish and testing Grayson Hanna
 
-#Josh Meyer
+# Collects Product Name, the Price of the product, and the amount sold to
+# calculate the total purchase price.
+# - Josh Meyer
 def collectData():
     user_input = input("Add a new purchase? (y/N): ")
+    # Loops through as long as "y" is provided
     while user_input.lower() == "y":
+        # Asks for the Product Name
         product_name = input("Product Name: ")
         price = 0.0
+        # Loops through to validate the Price input is an int or float
         while price == 0.0:
             price = input("Price: $")
             try:
+                # Try to cast a float
                 float(price)
             except:
+                # Failed to conver to float, reset and tell the user to try
+                # again
                 price = 0.0
                 print("Invalid input")
         count = 0
+        # Loops through to validate the Count input in an int
         while count == 0:
             count = input("Number Sold: ")
             if not str.isdigit(count):
+                # Failed to validate as int, reset and tell the user to try
+                # again
                 count = 0
                 print("Invalid input")
+        # Convert the Price to float and multiply by the converted int value
+        # of count, then round to 2 decimals
         total = round(float(price) * int(count), 2)
+        # Display the output to the user with the total price
+        # Example - *  Banana - $0.75 x2: $1.50 
         print("*  {product} - ${price:.2f} x{count}: ${total:.2f}".format(product = 
             product_name, price = float(price), count = int(count), total = float(total)))
+        # Ask if additional items to add
         user_input = input("Add a new purchase? (y/N): ")
 
 # The main program loop presents the name of the application and the current
