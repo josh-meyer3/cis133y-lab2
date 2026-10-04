@@ -78,7 +78,7 @@ def main():
         # Print bottom border
         print("*" * (border_length +2))
         # Print menu options and receive input
-        print("1) Enter Info")
+        print("1) Enter product info")
         print("q) Quit Application")
         selected=input("> ")
         # If tree for parsing the user input
