@@ -32,7 +32,7 @@ def main():
     selected=""
     while selected.lower() != "q":
         # The name of the Application to display
-        app_name = "Application Name"
+        app_name = "Profit calculator"
         # Get the current date and time
         current_time = datetime.now()
         # Format current_time to this style: 2026-10-01 12:10:05 PM
