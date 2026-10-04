@@ -22,7 +22,7 @@ from datetime import date,datetime,time
 
 def collectData():
     user_input = input("Add a new purchase? (y/N): ")
-    if user_input.lower() == "y":
+    while user_input.lower() == "y":
         product_name = input("Product Name: ")
         price = 0.0
         while price == 0.0:
@@ -41,7 +41,7 @@ def collectData():
         total = round(float(price) * int(count), 2)
         print("*  {product} - ${price:.2f} x{count}: ${total:.2f}".format(product = 
             product_name, price = float(price), count = int(count), total = float(total)))
-
+        user_input = input("Add a new purchase? (y/N): ")
 
 # The main program loop presents the name of the application and the current
 # time that it was executed. It provides a menu for selecting which 
