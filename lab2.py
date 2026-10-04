@@ -20,6 +20,9 @@
 # X At least one output that has concatenated string ("..." + "...")
 from datetime import date,datetime,time
 
+#Program polish and testing Grayson Hanna
+
+#Josh Meyer
 def collectData():
     user_input = input("Add a new purchase? (y/N): ")
     while user_input.lower() == "y":
@@ -86,5 +89,5 @@ def main():
             if int(selected) == 1:
                 collectData()
         print("")
-
+#Josh Meyer
 main()
