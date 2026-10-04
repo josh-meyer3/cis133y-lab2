@@ -48,8 +48,9 @@ def collectData():
         total = round(float(price) * int(count), 2)
         # Display the output to the user with the total price
         # Example - *  Banana - $0.75 x2: $1.50 
-        print("*  {product} - ${price:.2f} x{count}: ${total:.2f}".format(product = 
-            product_name, price = float(price), count = int(count), total = float(total)))
+        print("*  {product} - ${price:.2f} x{count}: ${total:.2f}".format(
+            product = product_name, price = float(price), count = int(count),
+            total = float(total)))
         # Ask if additional items to add
         user_input = input("Add a new purchase? (y/N): ")
 
